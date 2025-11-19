@@ -1,0 +1,326 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #222222;
+    background-color: #FCFAF7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Color System */
+:root {
+    /* Gold Accent Colors */
+    --gold-500: #A18A68;
+    --gold-300: #D2C4AF;
+    --gold-100: #F2EEE8;
+    
+    /* Neutral Colors */
+    --page-bg: #FCFAF7;
+    --surface-bg: #FFFFFF;
+    --text-primary: #222222;
+    --text-secondary: #6B6B6B;
+    --border: #EAEAEA;
+    
+    /* Semantic Colors */
+    --success: #28a745;
+    --error: #dc3545;
+    
+    /* Spacing System (4px grid) */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-xxl: 64px;
+    --space-xxxl: 96px;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    
+    /* Shadows */
+    --shadow-form: 0 10px 40px rgba(161, 138, 104, 0.15);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('imgs/hotel_coming_soon_bg_0.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 680px;
+    width: 100%;
+    padding: 0 var(--space-xxxl);
+    text-align: center;
+    color: var(--surface-bg);
+}
+
+/* Brand Logo */
+.brand-logo {
+    margin-bottom: var(--space-xxl);
+}
+
+.hotel-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: var(--space-sm);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--gold-300);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Coming Soon Message */
+.coming-soon-message {
+    margin-bottom: var(--space-xxxl);
+}
+
+.coming-soon-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -1px;
+    margin-bottom: var(--space-lg);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.coming-soon-subtitle {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Signup Form */
+.signup-form-container {
+    margin-bottom: var(--space-xxl);
+}
+
+.signup-form {
+    background: var(--surface-bg);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-form);
+    margin-bottom: var(--space-md);
+    color: var(--text-primary);
+}
+
+.form-group {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.email-input {
+    flex: 1;
+    height: 52px;
+    padding: 0 var(--space-md);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--surface-bg);
+    transition: border-color 300ms ease-in-out;
+}
+
+.email-input::placeholder {
+    color: var(--text-secondary);
+}
+
+.email-input:focus {
+    outline: none;
+    border-color: var(--gold-500);
+}
+
+.submit-btn {
+    height: 52px;
+    padding: 0 var(--space-lg);
+    background-color: var(--gold-500);
+    color: var(--surface-bg);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 400ms ease-in-out, transform 200ms ease;
+    white-space: nowrap;
+}
+
+.submit-btn:hover {
+    background-color: var(--gold-300);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.form-disclaimer {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Success Message */
+.success-message {
+    display: none;
+    background: var(--success);
+    color: var(--surface-bg);
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    text-align: center;
+    font-weight: 500;
+}
+
+.success-message.show {
+    display: block;
+    animation: fadeIn 300ms ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact Information */
+.contact-info {
+    font-size: 14px;
+    color: var(--surface-bg);
+    opacity: 0.8;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info a {
+    color: var(--gold-300);
+    text-decoration: none;
+    transition: opacity 200ms ease;
+}
+
+.contact-info a:hover {
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .hero-content {
+        padding: 0 var(--space-xl);
+    }
+    
+    .hotel-name {
+        font-size: 48px;
+    }
+    
+    .coming-soon-title {
+        font-size: 36px;
+    }
+    
+    .coming-soon-subtitle {
+        font-size: 16px;
+    }
+    
+    .form-group {
+        flex-direction: column;
+    }
+    
+    .email-input,
+    .submit-btn {
+        width: 100%;
+    }
+    
+    .brand-logo {
+        margin-bottom: var(--space-xl);
+    }
+    
+    .coming-soon-message {
+        margin-bottom: var(--space-xl);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for accessibility */
+.email-input:focus,
+.submit-btn:focus,
+.contact-info a:focus {
+    outline: 2px solid var(--gold-500);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --text-primary: #000000;
+        --text-secondary: #333333;
+        --border: #000000;
+    }
+    
+    .hero-overlay {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    }
+}
